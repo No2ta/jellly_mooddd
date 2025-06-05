@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "tutorialmod",
+  "version": "${version}",
+  "name": "TutorialMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/tutorialmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.abdo.tutorialmod.client.TutorialmodDataGenerator"
+    ],
+    "client": [
+      "me.abdo.tutorialmod.client.TutorialmodClient"
+    ],
+    "main": [
+      "me.abdo.tutorialmod.Tutorialmod"
+    ]
+  },
+  "mixins": [
+    "tutorialmod.mixins.json",
+    {
+      "config": "tutorialmod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
